@@ -33,7 +33,7 @@ class KarafkaApp < Karafka::App
   setup do |config|
     config.consumer_mapper = ConfluentACLPrefixConsumerMapper.new
     config.kafka = { 
-      'bootstrap.servers': "#{ENV.fetch('KAFKA_BOOTSTRAP_SERVERS','pkc-4nym6.us-east-1.aws.confluent.cloud:9092')}",
+      'bootstrap.servers': "#{ENV.fetch('KAFKA_BOOTSTRAP_SERVERS','localhost:9092')}",
       'security.protocol': 'SASL_SSL',
       'sasl.mechanisms': 'PLAIN',
       'sasl.username': "#{ENV['KAFKA_SASL_USERNAME']}",
