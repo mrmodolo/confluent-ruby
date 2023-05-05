@@ -50,7 +50,7 @@ end
 ## Default Consummer mapper
 
 Olhando o código em ```lib/karafka/routing/consumer_mapper.rb``` percebi que o 
-group_id é uma combinação do client_id + _ + o consumer group name usado na rota,
+group_id é uma combinação do client_id e do raw_consumer_group_name usado como rota,
 assim, basta usar como client_id o valor 'baas' para que o consumo funcione.
 
 
