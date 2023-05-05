@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./.config
+source ~/.confluent/karafka.config
 
 podman run -it --rm \
   -e KAFKA_BOOTSTRAP_SERVERS=$KAFKA_BOOTSTRAP_SERVERS \
