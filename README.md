@@ -47,7 +47,7 @@ class KarafkaApp < Karafka::App
 end
 ```
 
-## Default Consummer mapper
+## Default Consumer mapper
 
 Olhando o código em ```lib/karafka/routing/consumer_mapper.rb``` percebi que o 
 group_id é uma combinação do client_id e do raw_consumer_group_name usado como rota,
