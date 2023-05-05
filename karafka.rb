@@ -20,6 +20,14 @@ APP_LOADER.enable_reloading
 APP_LOADER.setup
 APP_LOADER.eager_load
 
+# https://karafka.io/docs/Consumer-mappers/
+# Karafka has a default strategy for consumer ids. 
+# Each consumer group id is a combination of the group name taken 
+# from the routing and the client_id. 
+# This is a really good convention for new applications and systems, 
+# however, if you migrate from other tools, you may want to preserve 
+# your different naming convention. To do so, you can implement a 
+# consumer mapper that will follow your conventions.
 class ConfluentACLPrefixConsumerMapper
   def initialize(prefix = "")
     @prefix = prefix
