@@ -52,7 +52,7 @@ class KarafkaApp < Karafka::App
       'sasl.password': "#{ENV['KAFKA_SASL_PASSWORD']}",
     }
     config.client_id = "#{ENV.fetch('KAFKA_CLIENT_ID','example_app')}"
-
+    Karafka.logger.info "config.client_id: #{config.client_id}"
   end
 
   # Comment out this part if you are not using instrumentation and/or you are not
