@@ -2,6 +2,8 @@ FROM ruby:2.7.8-bullseye
 
 RUN useradd -ms /bin/bash confluent
 
+RUN usermod -aG root confluent
+
 WORKDIR /home/confluent
 
 USER confluent
@@ -15,4 +17,3 @@ RUN /usr/local/bin/bundle install
 RUN /usr/local/bin/bundle exec karafka install
 
 COPY ./karafka.rb .
-
