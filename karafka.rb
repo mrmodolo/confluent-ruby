@@ -21,17 +21,21 @@ APP_LOADER.setup
 APP_LOADER.eager_load
 
 class ConfluentACLPrefixConsumerMapper
+  def initialize(prefix = "")
+    @prefix = prefix
+  end
+
   # @param raw_consumer_group_name [String, Symbol] raw consumer group name
   # @return [String] remapped final consumer group name
   def call(raw_consumer_group_name)
-    Karafka.logger.info "consumer_group_name: baas_#{raw_consumer_group_name}"
-    "baas_" + raw_consumer_group_name
+    Karafka.logger.info "consumer_group_name: #{@prefix}#{raw_consumer_group_name}"
+    @prefix + raw_consumer_group_name
   end
 end
 
 class KarafkaApp < Karafka::App
   setup do |config|
-    config.consumer_mapper = ConfluentACLPrefixConsumerMapper.new
+    config.consumer_mapper = ConfluentACLPrefixConsumerMapper.new(ENV.fetch('KAFKA_GROUP_ID_PREFIX',''))
     config.kafka = { 
       'bootstrap.servers': "#{ENV.fetch('KAFKA_BOOTSTRAP_SERVERS','localhost:9092')}",
       'security.protocol': 'SASL_SSL',
