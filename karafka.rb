@@ -44,7 +44,8 @@ end
 class KarafkaApp < Karafka::App
   setup do |config|
     config.consumer_mapper = ConfluentACLPrefixConsumerMapper.new(ENV.fetch('KAFKA_GROUP_ID_PREFIX',''))
-    config.kafka = { 
+    config.kafka = {
+      'allow.auto.create.topics': false,
       'bootstrap.servers': "#{ENV.fetch('KAFKA_BOOTSTRAP_SERVERS','localhost:9092')}",
       'security.protocol': 'SASL_SSL',
       'sasl.mechanisms': 'PLAIN',
