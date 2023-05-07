@@ -111,12 +111,12 @@ end
 
 ## Exemplo
 
-### Constrói a imagmem
+### Constrói a imagem
 
 ```bash
 ./build.sh
 ```
-### Roda o servidor que consome as mensagens
+### Roda o servidor (consome as mensagens)
 
 ```bash
 run_server.sh
