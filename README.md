@@ -111,6 +111,12 @@ end
 
 ## Exemplo
 
+Para criar a imagem, rodar o servidor e enviar mensagens é 
+necessário ter o Docker ou o Podman/Buildah instalados.
+
+Além disso é necessário também criar o arquivo de configuração para a conexão.
+
+
 ### Constrói a imagem
 
 ```bash
