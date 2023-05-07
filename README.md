@@ -29,6 +29,19 @@ KAFKA_SASL_PASSWORD
 KAFKA_SASL_USERNAME
 ```
 
+## Consumindo com o karafka
+
+No karafka, a forma mais fácil de configurar o prefixo para o **group_id** 
+é usando o **client_id**.
+
+A estratégia do karafka é combinar o **client_id** com o **raw_consumer_group_name**
+usado na rota. Se o **client_id** for definido como **meu_cliente** e o **raw_consumer_group_name**
+(consumer_group) como **meu_grupo** o resultado será **meu_cliente_meu_grupo**.
+
+Assim, basta que o **client_id** seja configurado com o prefixo estabelecido pela ACL Confluent (lembre que o 
+karafka adiciona o '_' sublinhado de forma automática)
+
+
 ## Consumer mappers
 
 [Consumer mappers](https://karafka.io/docs/Consumer-mappers/)
@@ -96,7 +109,7 @@ end
 
 ## Exemplo
 
-### Cosntroi a imagmem
+### Constroi a imagmem
 
 ```bash
 ./build.sh
