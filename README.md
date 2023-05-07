@@ -6,8 +6,8 @@
 - Todo consumer deve ter um consumer group id definido;
 - O consumer group deve ter um prefixo aceito pela ACL Confluent;
 - Toda URL pública deve usar SASL com usuário e senha;
-  'security.protocol': 'SASL_SSL
-  'sasl.mechanisms': 'PLAIN'  
+  - 'security.protocol': 'SASL_SSL
+  - 'sasl.mechanisms': 'PLAIN'  
 
 # Requisitos para conexão e envio de mensagens
 
@@ -22,11 +22,11 @@ Os scripts assumem um arquivo de configuração com as váriáveis abaixo.
 O caminho default para o script é ```~/.confluent/karafka.config```
 
 ```bash
-KAFKA_GROUP_ID_PREFIX
 KAFKA_BOOTSTRAP_SERVERS
-KAFKA_SASL_USERNAME
-KAFKA_SASL_PASSWORD
 KAFKA_CLIENT_ID
+KAFKA_GROUP_ID_PREFIX
+KAFKA_SASL_PASSWORD
+KAFKA_SASL_USERNAME
 ```
 
 ## Consumer mappers
