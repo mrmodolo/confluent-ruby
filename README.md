@@ -39,7 +39,10 @@ usado na rota. Se o **client_id** for definido como **meu_cliente** e o **raw_co
 (consumer_group) como **meu_grupo** o resultado será **meu_cliente_meu_grupo**.
 
 Assim, basta que o **client_id** seja configurado com o prefixo estabelecido pela ACL Confluent (lembre que o 
-karafka adiciona o '_' sublinhado de forma automática)
+karafka adiciona o '_' sublinhado de forma automática).
+
+Caso seja necessário uma maneira particular para a formação do consumer_group, é possível usar uma classe
+para criar um consumer mapper especializado.
 
 
 ## Consumer mappers
