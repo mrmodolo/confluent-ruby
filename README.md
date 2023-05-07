@@ -1,5 +1,7 @@
 # Karafka SASL
 
+[karafka](https://github.com/karafka/karafka)
+
 # Requisitos para conexão e consumo
 
 - Não é permitido a criação de tópicos de forma automática (allow.auto.create.topics': false);
@@ -28,7 +30,6 @@ KAFKA_GROUP_ID_PREFIX
 KAFKA_SASL_PASSWORD
 KAFKA_SASL_USERNAME
 ```
-
 ## Consumindo com o karafka
 
 No karafka, a forma mais fácil de configurar o prefixo para o **group_id** 
@@ -41,9 +42,7 @@ usado na rota. Se o **client_id** for definido como **meu_cliente** e o **raw_co
 Assim, basta que o **client_id** seja configurado com o prefixo estabelecido pela ACL Confluent (lembre que o 
 karafka adiciona o '_' sublinhado de forma automática).
 
-Caso seja necessário uma maneira particular para a formação do consumer_group, é possível usar uma classe
-para criar um consumer mapper especializado.
-
+É possível também, usar uma classe para criar um consumer mapper especializado.
 
 ## Consumer mappers
 
@@ -117,13 +116,11 @@ end
 ```bash
 ./build.sh
 ```
-
 ### Roda o servidor que consome as mensagens
 
 ```bash
 run_server.sh
 ```
-
 ### Envia uma mensagem
 
 ```bash
