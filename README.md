@@ -4,7 +4,7 @@
 
 # Requisitos para conexão e consumo
 
-- Não é permitido a criação de tópicos de forma automática (allow.auto.create.topics': false);
+- Não é permitido a criação de tópicos de forma automática (**allow.auto.create.topics: false**);
 - Todo consumer deve ter um **consumer group id** definido;
 - O consumer group deve ter um **prefixo aceito pela ACL Confluent**;
 - Toda URL pública deve usar SASL com usuário e senha;
@@ -13,10 +13,10 @@
 
 # Requisitos para conexão e envio de mensagens
 
-- Não é permitido a criação de tópicos de forma automática (allow.auto.create.topics': false);
+- Não é permitido a criação de tópicos de forma automática (**allow.auto.create.topics: false**);
 - Toda URL pública deve usar SASL com usuário e senha;
-  'security.protocol': 'SASL_SSL'
-  'sasl.mechanisms': 'PLAIN'
+  - 'security.protocol': 'SASL_SSL'
+  - 'sasl.mechanisms': 'PLAIN'
 
 ## Configurações
 
