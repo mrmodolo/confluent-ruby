@@ -111,7 +111,7 @@ end
 
 ## Exemplo
 
-### Constroi a imagmem
+### Constrói a imagmem
 
 ```bash
 ./build.sh
